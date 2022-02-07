@@ -16,7 +16,7 @@ root          17       2  0 19:01 ?        00:00:00 [cpuhp/1]
 root          18       2  0 19:01 ?        00:00:00 [idle_inject/1]
 root          19       2  0 19:01 ?        00:00:00 [migration/1]
 root          20       2  0 19:01 ?        00:00:00 [ksoftirqd/1]
-root          21       2  0 19:01 ?        00:00:00 [kworker/1:0-events]
+root          21       2  0 19:01 ?        00:00:00 [kworker/1:0-mm_percpu_wq]
 root          22       2  0 19:01 ?        00:00:00 [kworker/1:0H-events_highpri]
 root          23       2  0 19:01 ?        00:00:00 [cpuhp/2]
 root          24       2  0 19:01 ?        00:00:00 [idle_inject/2]
@@ -96,7 +96,7 @@ avahi        592       1  0 19:01 ?        00:00:00 avahi-daemon: running [melin
 root         593       1  0 19:01 ?        00:00:00 /usr/sbin/cron -f
 root         594       1  0 19:01 ?        00:00:00 /usr/sbin/cupsd -l
 message+     595       1  0 19:01 ?        00:00:01 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
-root         598       1  0 19:01 ?        00:00:03 /usr/sbin/NetworkManager --no-daemon
+root         598       1  0 19:01 ?        00:00:04 /usr/sbin/NetworkManager --no-daemon
 root         605       1  0 19:01 ?        00:00:00 /usr/sbin/irqbalance --foreground
 root         606       1  0 19:01 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
 root         610       1  0 19:01 ?        00:00:02 /usr/lib/policykit-1/polkitd --no-debug
@@ -112,7 +112,7 @@ whoopsie     743       1  0 19:02 ?        00:00:00 /usr/bin/whoopsie -f
 kernoops     747       1  0 19:02 ?        00:00:00 /usr/sbin/kerneloops --test
 kernoops     749       1  0 19:02 ?        00:00:00 /usr/sbin/kerneloops
 root         929       1  0 19:02 ?        00:00:00 /usr/sbin/gdm3
-root         931       1  0 19:02 ?        00:00:00 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
+root         931       1  0 19:02 ?        00:00:01 /usr/sbin/VBoxService --pidfile /var/run/vboxadd-service.sh
 rtkit        962       1  0 19:02 ?        00:00:00 /usr/libexec/rtkit-daemon
 root        1061       1  0 19:02 ?        00:00:00 /usr/lib/upower/upowerd
 colord      1283       1  0 19:02 ?        00:00:00 /usr/libexec/colord
@@ -125,7 +125,7 @@ gdm         2383       1  0 20:16 ?        00:00:00 /lib/systemd/systemd --user
 gdm         2384    2383  0 20:16 ?        00:00:00 (sd-pam)
 root        2400       2  0 20:16 ?        00:00:00 [kworker/3:3-cgroup_destroy]
 root        2406       2  0 20:16 ?        00:00:00 [kworker/0:2-cgroup_destroy]
-root        2407       2  0 20:16 ?        00:00:00 [kworker/0:3-events]
+root        2407       2  0 20:16 ?        00:00:00 [kworker/0:3-mm_percpu_wq]
 root        2410       1  0 20:16 ?        00:00:00 /lib/systemd/systemd-udevd
 gdm         2416    2383  0 20:16 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
 gdm         2418    2383  0 20:16 ?        00:00:00 /usr/libexec/tracker-miner-fs
@@ -187,14 +187,14 @@ melinal+    2929    2858  0 20:21 ?        00:00:00 /usr/libexec/gvfs-mtp-volume
 melinal+    2934    2858  0 20:21 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
 melinal+    2938    2858  0 20:21 ?        00:00:00 /usr/libexec/gvfs-afc-volume-monitor
 melinal+    2953    2846  0 20:21 tty2     00:00:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
-melinal+    2955    2953  0 20:21 tty2     00:00:07 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+melinal+    2955    2953  0 20:21 tty2     00:00:13 /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
 melinal+    2976    2953  0 20:21 tty2     00:00:00 /usr/libexec/gnome-session-binary --systemd --systemd --session=ubuntu
 melinal+    3047       1  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --clipboard
 melinal+    3049    3047  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --clipboard
 melinal+    3059       1  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --seamless
 melinal+    3060    3059  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --seamless
 melinal+    3066       1  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --draganddrop
-melinal+    3068    3066  0 20:21 ?        00:00:05 /usr/bin/VBoxClient --draganddrop
+melinal+    3068    3066  0 20:21 ?        00:00:07 /usr/bin/VBoxClient --draganddrop
 melinal+    3071       1  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --vmsvga
 melinal+    3072    3071  0 20:21 ?        00:00:00 /usr/bin/VBoxClient --vmsvga
 melinal+    3074    2976  0 20:21 ?        00:00:00 /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --systemd --session=ubuntu
@@ -202,7 +202,7 @@ melinal+    3113    2858  0 20:21 ?        00:00:00 /usr/libexec/at-spi-bus-laun
 melinal+    3118    3113  0 20:21 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
 melinal+    3148    2858  0 20:21 ?        00:00:00 /usr/libexec/gnome-session-ctl --monitor
 melinal+    3155    2858  0 20:21 ?        00:00:00 /usr/libexec/gnome-session-binary --systemd-service --session=ubuntu
-melinal+    3169    2858  1 20:21 ?        00:00:22 /usr/bin/gnome-shell
+melinal+    3169    2858  1 20:21 ?        00:00:33 /usr/bin/gnome-shell
 melinal+    3202    3169  0 20:21 ?        00:00:00 ibus-daemon --panel disable --xim
 melinal+    3206    3202  0 20:21 ?        00:00:00 /usr/libexec/ibus-dconf
 melinal+    3207    3202  0 20:21 ?        00:00:00 /usr/libexec/ibus-extension-gtk3
@@ -238,13 +238,13 @@ melinal+    3365    2858  0 20:21 ?        00:00:00 /usr/libexec/gsd-wwan
 melinal+    3375    2858  0 20:21 ?        00:00:00 /usr/libexec/gsd-xsettings
 melinal+    3410    2858  0 20:21 ?        00:00:00 /usr/libexec/gsd-printer
 melinal+    3416    3202  0 20:21 ?        00:00:00 /usr/libexec/ibus-engine-simple
-root        3552       2  0 20:22 ?        00:00:00 [kworker/3:2-events]
+root        3552       2  0 20:22 ?        00:00:01 [kworker/3:2-mm_percpu_wq]
 root        3553       2  0 20:22 ?        00:00:00 [kworker/2:2-mm_percpu_wq]
 melinal+    3555    2858  0 20:22 ?        00:00:00 /usr/libexec/gvfsd-metadata
 melinal+    3560    3155  0 20:22 ?        00:00:00 update-notifier
-root        3608       2  0 20:30 ?        00:00:00 [kworker/u8:2-events_power_efficient]
 root        4141       2  0 20:42 ?        00:00:00 [kworker/1:2-cgroup_destroy]
-root        4164       2  0 20:47 ?        00:00:00 [kworker/u8:1-events_unbound]
-melinal+    4174    2858  0 20:47 ?        00:00:00 /usr/libexec/gnome-terminal-server
-melinal+    4182    4174  0 20:47 pts/0    00:00:00 bash
-melinal+    4667    4182  0 20:50 pts/0    00:00:00 ps -ef
+root        4164       2  0 20:47 ?        00:00:00 [kworker/u8:1-events_power_efficient]
+root        4706       2  0 20:57 ?        00:00:00 [kworker/u8:2-events_unbound]
+melinal+    4717    2858  0 21:01 ?        00:00:00 /usr/libexec/gnome-terminal-server
+melinal+    4725    4717  0 21:01 pts/0    00:00:00 bash
+melinal+    5210    4725  0 21:04 pts/0    00:00:00 ps -ef
