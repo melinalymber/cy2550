@@ -1,56 +1,11 @@
 
 import argparse
 
-import string
-
 import random
 
 parser = argparse.ArgumentParser
 
 args = parser.parse_args()
-
-openWordTxt = open(words.txt)
-
-wordTxt = openWordTxt.read().splitlines()
-
-wordSS = random.sample(wordTxt, args.words)
-
-capitalList = [], capitalNumber = 0
-
-if 0 < args.capital <= args.words:
-    #string.capitalize()
-    capitalSS = random.sample(wordSS, args.capital)
-    wordSS = list(set(wordSS) - set(capitalSS))
-    while args.capital > args.capitalNumber:
-        capitalList.append(capitalSS[capitalNumber].title())
-        capitalNumber += 1
-
-    wordSS = wordSS + capitalList
-
-    random.shuffle(wordSS)
-
-numberList = [], numberNumber = 0
-
-if args.numbers > 0:
-    while args.numbers > numberNumber:
-        temporaryList = [str(random.randint(0, 9))]
-        numberList = numberList + temporaryList
-        numberNumber += 1
-
-    wordSS = wordSS + numberList
-
-    random.shuffle(wordSS)
-
-if args.symbols > 0:
-    symbolList = ["!", "@", "#", "%", "$", "^", "&", "*", "_", "-", "+", ":", ";", "/", "?", "~"]
-    symbolSS = random.sample(symbolList, args.symbols)
-
-
-    wordSS = wordSS + symbolSS
-
-    random.shuffle(wordSS)
-    
-    
 
 parser.add_argument("-h", "--help", int=0, help="Show this help message and exit")
 
@@ -64,6 +19,63 @@ parser.add_argument("-n", "--numbers", type=int, help="Insert NUMBERS random num
 
 parser.add_argument("-s", "--symbols", type=int, help="insert SYMBOLS random symbols in the password",
                     default=0)
+
+def pwGenWords(words):
+openWordTxt = open(words.txt)
+wordTxt = openWordTxt.read().splitlines()
+wordSS = random.sample(wordTxt, args.words)
+
+def capitalsPwGen:
+   capitalList = ' '
+   capitalNumber = 0
+   if 0 < args.capital <= args.words:
+    capitalSS = random.sample(wordSS, args.capital)
+    wordSS = list(set(wordSS) - set(capitalSS))
+    while args.capital > args.capitalNumber:
+        capitalList.append(capitalSS[capitalNumber].title())
+        capitalNumber += 1
+
+    wordSS = wordSS + capitalList
+    random.shuffle(wordSS)
+    
+
+def numbersPwGen(add)
+   numberList = ' '
+   number Number = 0
+   if args.numbers > 0:
+    while args.numbers > numberNumber:
+        randomNumber = str(random.randint(0, 9))
+        pwGenNum += randomNumber
+        numberNumber += 1
+
+    wordSS = wordSS + numberList
+    random.shuffle(wordSS)
+    
+    return pwGenNum
+
+def symbolsPwGen(number):
+   if pwGenSym = ' '
+   symbolList = ["!", "@", "#", "%", "$", "^", "&", "*", "_", "-", "+", ":", ";", "/", "?", "~"]
+   while args.symbols > 0:
+    symbolSS = random.sample(symbolList, args.symbols)
+    pwGenSym += symbolList[random.randint(0, len(symbolList)-1)
+
+
+    wordSS = wordSS + symbolSS
+    random.shuffle(wordSS)
+    
+    return pwGenSyms
+    
+ def pwGen (wordsTxt, wordNumber, splitlines, adding=2 symbol, = true, specialNumber = 1):
+    newPass = pwGenWords(wordSS, wordsTxt, words.txt)
+    newNum = pwGenNum(adding)
+    newPass.append(newNumbers
+    if symbol:
+       newSymbol = symbolsPwGen(symbolAmount)
+       newPass.append(newSymbol)
+ 
+    return (separator.join(newPass))
+   
 
 password = "".join(wordSS)
 
