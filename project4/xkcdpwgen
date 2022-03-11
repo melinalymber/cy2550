@@ -1,16 +1,15 @@
+
 import argparse
 
 import string
 
 import random
 
-
 parser = argparse.ArgumentParser
 
 args = parser.parse_args()
 
-
-openWordTxt = open(word.txt)
+openWordTxt = open(words.txt)
 
 wordTxt = openWordTxt.read().splitlines()
 
@@ -19,17 +18,16 @@ wordSS = random.sample(wordTxt, args.words)
 capitalList = [], capitalNumber = 0
 
 if 0 < args.capital <= args.words:
-    string.capitalize()
+    #string.capitalize()
     capitalSS = random.sample(wordSS, args.capital)
-    wordSS = list((wordSS) - (capitalSS))
-    while  args.capital > args.capitalNumber:
-        capitalList.extend(capitalSS)
+    wordSS = list(set(wordSS) - set(capitalSS))
+    while args.capital > args.capitalNumber:
+        capitalList.append(capitalSS[capitalNumber].title())
         capitalNumber += 1
 
     wordSS = wordSS + capitalList
 
     random.shuffle(wordSS)
-
 
 numberList = [], numberNumber = 0
 
@@ -40,9 +38,8 @@ if args.numbers > 0:
         numberNumber += 1
 
     wordSS = wordSS + numberList
-    
-    random.shuffle(wordSS)
 
+    random.shuffle(wordSS)
 
 if args.symbols > 0:
     symbolList = ["!", "@", "#", "%", "$", "^", "&", "*", "_", "-", "+", ":", ";", "/", "?", "~"]
@@ -50,16 +47,16 @@ if args.symbols > 0:
     symbolNumber += 1
 
     wordSS = wordSS + symbolSS
-    
+
     random.shuffle(wordSS)
 
-parser.add_argument("-h", "--help", int=0, "Show this help message and exit")
+parser.add_argument("-h", "--help", int=0, help="Show this help message and exit")
 
 parser.add_argument("-w WORDS", "--words", type=int, help="Include WORDS words in the password", default=4)
 
 parser.add_argument("-c CAPS", "--caps", type=int, help="Capitalize the first letter of CAPS random words",
                     default=0)
-                    
+
 parser.add_argument("-n NUMBERS", "--numbers", type=int, help="Insert NUMBERS random numbers in the password",
                     default=0)
 
@@ -69,5 +66,7 @@ parser.add_argument("-s SYMBOLS", "--symbols", type=int, help="insert SYMBOLS ra
 password = "".join(wordSS)
 
 print(password)
+
+
 
 
