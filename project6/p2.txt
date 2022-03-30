@@ -1,0 +1,10 @@
+File "/usr/sbin/aa-genprof", line 112, in <module>
+    apparmor.helpers[program] = apparmor.get_profile_flags(profile_filename, program)
+  File "/usr/lib/python3/dist-packages/apparmor/aa.py", line 630, in get_profile_flags
+    with open_file_read(filename) as f_in:
+  File "/usr/lib/python3/dist-packages/apparmor/common.py", line 177, in open_file_read
+    return open_file_anymode('r', path, encoding)
+  File "/usr/lib/python3/dist-packages/apparmor/common.py", line 190, in open_file_anymode
+    orig = codecs.open(path, mode, encoding, errors=errorhandling)
+  File "/usr/lib/python3.8/codecs.py", line 905, in open
+    file = builtins.open(filename, mode, buffering)
